@@ -8,6 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
@@ -30,6 +32,8 @@ public class Usuario {
 	
 	@Size(min = 5, max = 100)
 	private String foto;
+	
+	@JsonIgnoreProperties
 
 	public Long getId() {
 		return id;

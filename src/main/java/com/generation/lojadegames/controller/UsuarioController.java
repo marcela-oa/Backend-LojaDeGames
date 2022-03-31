@@ -38,7 +38,7 @@ public class UsuarioController {
 	
 	@GetMapping("/usuario/{usuario}")
 	public ResponseEntity<List<Usuario>> getByUsuario (@PathVariable String usuario) {
-		return ResponseEntity.ok(usuarioRepository.findByUsuario(usuario));
+		return ResponseEntity.ok(usuarioRepository.findByUsuarioContainingIgnoreCase(usuario));
 	}
 	
 	@PostMapping
